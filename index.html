@@ -7,8 +7,19 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<link href="styles.50851ff87a720c1e412e.bundle.css" rel="stylesheet"/></head>
+<link href="styles.679e51c9a199f28873a3.bundle.css" rel="stylesheet"/></head>
 <body>
   <app-root>Loading...</app-root>
-<script type="text/javascript" src="inline.9355bb2844a69909c62f.bundle.js"></script><script type="text/javascript" src="polyfills.81ed681e29bd26c517a4.bundle.js"></script><script type="text/javascript" src="vendor.a2da17b9c49cdce7678a.bundle.js"></script><script type="text/javascript" src="main.e088c8ce83e51568eb21.bundle.js"></script></body>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        console.log('Service Worker registered');
+      }).catch(function(err) {
+        console.log('Service Worker registration failed: ', err);
+      });
+    }
+  </script>
+
+<script type="text/javascript" src="inline.5181d6f2131154634bfe.bundle.js"></script><script type="text/javascript" src="polyfills.6810ecaadc72a8a6993d.bundle.js"></script><script type="text/javascript" src="vendor.4702ab43a6024a4312fc.bundle.js"></script><script type="text/javascript" src="main.2cfce34c7f9f9b6da4ae.bundle.js"></script></body>
 </html>
