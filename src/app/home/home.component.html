@@ -6,7 +6,7 @@
         <div class=row>
 
           
-            <div class="col-md-3 sidebar" *ngIf="isProducts">
+            <div class="col-md-3 sidebar" *ngIf="isProducts" class="hidden-xs">
             <h1>Searched Results For</h1>
                 <!-- <app-taxons [taxonomies]="taxonomies$ | async"></app-taxons> -->
                 <app-categories [taxonomiList]="taxonomies$ | async" (onSelected)="OnCategeorySelected($event)" (showAll)="showAll()" [isFilterOn]="isFilterOn"
@@ -14,7 +14,7 @@
                 </app-categories>
                 <app-brand-filter [taxonomiList]="brands$ | async" [isFilterOn]="isFilterOn"></app-brand-filter>
             </div>
-            <div class="col-md-9">
+            <div class="col-12 col-md-9">
                 <app-content [productsList]="products" class="col-12">
                     <!-- [taxonIds]="selectedTaxonIds$ | async"  -->
                 </app-content>

@@ -121,13 +121,13 @@ export class HeaderComponent implements OnInit {
 
 
   updateHeader(evt) {
-    if (this.screenwidth >= 1000) {
-      this.currPos = (window.pageYOffset || evt.target.scrollTop) - (evt.target.clientTop || 0);
-      if (this.currPos >= this.changePos) {
-        this.isScrolled = true;
-      } else {
-        this.isScrolled = false;
-      }
-    }
+    // if (this.screenwidth >= 1000) {
+    //   this.currPos = (window.pageYOffset || evt.target.scrollTop) - (evt.target.clientTop || 0);
+    //   if (this.currPos >= this.changePos) {
+    //     this.isScrolled = true;
+    //   } else {
+    //     this.isScrolled = false;
+    //   }
+    // }
   }
 }
