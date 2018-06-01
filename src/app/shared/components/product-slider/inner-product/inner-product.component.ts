@@ -18,7 +18,8 @@ export class InnerIproduct implements OnInit {
 
   getProductImageUrl() {
     // tslint:disable-next-line:max-line-length
-    return environment.apiEndpoint + `/spree/products/${this.product.master.images[0].id}/product/${this.product.master.images[0].attachment_file_name}`
+    // return environment.apiEndpoint + `/spree/products/${this.product.master.images[0].id}/product/${this.product.master.images[0].attachment_file_name}`
+    return this.product.master.images[0].large_url
   }
 
 }

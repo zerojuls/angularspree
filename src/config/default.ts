@@ -1,6 +1,6 @@
 export const DEFAULT_CONFIG = {
   // Add Your custom configs here
-  prodApiEndpoint: 'https://prod.server.com',
+  prodApiEndpoint: 'http://localhost:4100/',
   appName: 'Angularspree',
   fevicon: 'http://via.placeholder.com/350x150',
   header: {
