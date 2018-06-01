@@ -62,20 +62,21 @@ export class CheckoutService {
    * @memberof CheckoutService
    */
   fetchCurrentOrder() {
-    return (
-      this.http
-        .get<Order>('api/v1/orders/current')
+
+    const token = localStorage.getItem('order')
+    const json_token = token ? JSON.parse(token) : null
+    const id = json_token ? json_token['order_token'] : null
+
+    if (id) {
+      return this.http.get<Order>(`api/v1/orders/current/${id}`)
         .map(order => {
-          if (order) {
-            const token = order.token;
-            this.setOrderTokenInLocalStorage({ order_token: token });
-            return this.store.dispatch(this.actions.fetchCurrentOrderSuccess(order));
-          } else {
-            this.createEmptyOrder()
-              .subscribe();
-          }
+          const new_token = order.token;
+          this.setOrderTokenInLocalStorage({ order_token: new_token });
+          return this.store.dispatch(this.actions.fetchCurrentOrderSuccess(order));
         })
-    )
+    } else {
+      return this.createEmptyOrder().map(data => data);
+    }
   }
 
   /**
@@ -100,7 +101,7 @@ export class CheckoutService {
    */
   createEmptyOrder() {
     const user = JSON.parse(localStorage.getItem('user'));
-    const headers = new HttpHeaders().set('Content-Type', 'text/plain');
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     return (
       this.http
