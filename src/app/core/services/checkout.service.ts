@@ -68,7 +68,7 @@ export class CheckoutService {
     const id = json_token ? json_token['order_token'] : null
 
     if (id) {
-      return this.http.get<Order>(`api/v1/orders/current/${id}`)
+      return this.http.get<Order>(`api/v1/orders/${id}`)
         .map(order => {
           const new_token = order.token;
           this.setOrderTokenInLocalStorage({ order_token: new_token });
