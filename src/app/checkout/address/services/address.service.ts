@@ -19,7 +19,7 @@ export class AddressService {
       'city': ['', Validators.required],
       'phone': ['', Validators.required],
       'zipcode': ['', Validators.required],
-      'state_id': [1140, Validators.required],
+      'state_id': [1987, Validators.required],
       'country_id': [105, Validators.required],
       'state_name': ['', Validators.required]
     });
